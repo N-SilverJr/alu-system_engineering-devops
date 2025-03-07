@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #0e1e2f; /* Digital Ocean inspired blue */
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .container {
+            z-index: 1;
+            padding: 2rem;
+            max-width: 800px;
+        }
+        
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            color: #0069ff; /* Digital Ocean blue */
+            text-shadow: 0 0 10px rgba(0, 105, 255, 0.7);
+        }
+        
+        .main-message {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        
+        .sub-message {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+        
+        .go-home {
+            display: inline-block;
+            background-color: #0069ff; /* Digital Ocean blue */
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .go-home:hover {
+            background-color: #0050c0;
+            transform: scale(1.05);
+        }
+        
+        /* Inspired by GitHub's Octocat */
+        .octo {
+            position: absolute;
+            bottom: -50px;
+            right: 50px;
+            width: 150px;
+            transform: rotate(15deg);
+            opacity: 0.8;
+            transition: transform 0.5s;
+        }
+        
+        .octo:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        /* Lego-inspired blocks */
+        .lego-block {
+            position: absolute;
+            border-radius: 4px;
+            opacity: 0.6;
+            z-index: 0;
+        }
+        
+        /* Blizzard snow effect */
+        .snowflake {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+        }
+        
+        /* StickerMule-inspired sticker */
+        .sticker {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            transform: rotate(-15deg);
+            background: #e71d36; /* StickerMule red */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="sticker">ERROR 404</div>
+    
+    <div class="container">
+        <h1>404</h1>
+        <p class="main-message">Ceci n'est pas une page</p>
+        <p class="sub-message">Looks like you've ventured into the digital void! The page you're looking for has been abducted by aliens, eaten by zombies, or simply doesn't exist.</p>
+        <button class="go-home" onclick="window.location.href='/'">Return to Home</button>
+    </div>
+    
+    <!-- GitHub-inspired Octocat silhouette -->
+    <svg class="octo" viewBox="0 0 16 16" version="1.1" aria-hidden="true">
+        <path fill="#ffffff" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+    </svg>
+    
+    <script>
+        // Create Lego-inspired blocks
+        const colors = ['#f01e1e', '#f0741e', '#efef24', '#29c229', '#0069ff', '#8e31e6'];
+        for (let i = 0; i < 15; i++) {
+            const block = document.createElement('div');
+            block.className = 'lego-block';
+            block.style.width = Math.random() * 60 + 20 + 'px';
+            block.style.height = Math.random() * 30 + 20 + 'px';
+            block.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            block.style.left = Math.random() * 100 + 'vw';
+            block.style.top = Math.random() * 100 + 'vh';
+            block.style.transform = `rotate(${Math.random() * 360}deg)`;
+            document.body.appendChild(block);
+        }
+        
+        // Create Blizzard-inspired snow effect
+        for (let i = 0; i < 50; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.style.left = Math.random() * 100 + 'vw';
+            snowflake.style.top = Math.random() * 100 + 'vh';
+            snowflake.style.opacity = Math.random();
+            snowflake.style.width = Math.random() * 5 + 3 + 'px';
+            snowflake.style.height = snowflake.style.width;
+            document.body.appendChild(snowflake);
+            
+            // Animate snowflakes
+            animateSnowflake(snowflake);
+        }
+        
+        function animateSnowflake(el) {
+            const speed = Math.random() * 3 + 1;
+            const startLeft = parseFloat(el.style.left);
+            const drift = Math.random() * 10 - 5;
+            
+            let posY = parseFloat(el.style.top);
+            let posX = startLeft;
+            let angle = 0;
+            
+            function update() {
+                posY += speed;
+                angle += 0.01;
+                posX = startLeft + Math.sin(angle) * drift;
+                
+                if (posY > 100) {
+                    posY = -10;
+                    posX = Math.random() * 100;
+                }
+                
+                el.style.top = posY + 'vh';
+                el.style.left = posX + 'vw';
+                
+                requestAnimationFrame(update);
+            }
+            
+            update();
+        }
+    </script>
+</body>
+</html>
